@@ -1,0 +1,93 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6f7bad, #ede9e0, #ce3d30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Efecto de transparencia */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px; /* Reducido para hacerlo más pequeño */
+    position: relative; /* Necesario para la posición absoluta del botón */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px; /* Ajustado el tamaño del título */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Separación entre campos */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-size: 14px; /* Tamaño de fuente de labels igualado al del botón */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px; /* Tamaño de fuente de inputs igualado al del botón */
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-group a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-group a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para el botón fuera del contenedor */
+.button-container {
+    position: absolute;
+    bottom: -60px; /* Ajusta la posición vertical del botón según sea necesario */
+    left: 50%;
+    transform: translateX(-50%); /* Centra el botón horizontalmente */
+    width: 100%;
+    max-width: 350px; /* Asegura que el botón no sea más ancho que el contenedor */
+    display: flex;
+    justify-content: center;
+}
+
+.button-container .btn-primary {
+    background-color: #ce3d30; /* Color del botón */
+    border: none;
+    border-radius: 50px; /* Bordes redondeados */
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button-container .btn-primary:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
