@@ -1,6 +1,7 @@
+from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Cuenta, Usuario, Evento, Coleccion
-from .forms import CuentaForm, UsuarioForm, EventoForm, ColeccionForm, CustomUserCreationForm
+from .forms import CuentaForm, UsuarioForm, EventoForm, ColeccionForm, CustomUserCreationForm, CustomAuthenticationForm
 from django.contrib.auth import login, authenticate
 from django.shortcuts import render, redirect
 
@@ -88,4 +89,20 @@ def registro(request):
     else:
         form = CustomUserCreationForm()
     return render(request, 'registro.html', {'form': form})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('pagina_inicio')  # Redirigir a la página de inicio después de iniciar sesión
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+
 

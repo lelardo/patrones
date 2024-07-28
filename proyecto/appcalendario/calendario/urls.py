@@ -1,7 +1,6 @@
 from . import views
 from django.urls import path, include
-
-from .views import registro
+from .views import registro, login_view
 
 urlpatterns = [
     path('', views.pagina_inicio, name='pagina_inicio'),  # Página de inicio
@@ -14,6 +13,8 @@ urlpatterns = [
     path('crear_coleccion/', views.crear_coleccion, name='crear_coleccion'),
     path('listar_colecciones/', views.listar_colecciones, name='listar_colecciones'),
     path('registro/', registro, name='registro'),
+    path('login/', login_view, name='login'),
+    path('', include('django.contrib.auth.urls')),
 
 
 
